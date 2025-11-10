@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASBCS - Contact Us</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      padding-top: 80px; /* space for fixed header */
+    }
+
+    h1, h2, h3, nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #000;
+      color: #fff;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo img {
+      width: 200px;
+      height: auto;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00a000;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 220px;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* HERO */
+    .page-hero {
+      background: url('images/contact-hero.jpg') no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      padding: 0 1rem;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .page-hero .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ff0000;
+    }
+    .page-hero p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+
+    /* CONTACT INFO */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #004080;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .contact-info div {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .contact-info h3 {
+      color: #ff0000;
+      margin-bottom: 0.5rem;
+    }
+
+    /* CONTACT FORM */
+    form {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #004080;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #00a000;
+    }
+
+    /* MAP */
+    .map {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 3rem 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+    .footer-col h3 {
+      color: #ff0000;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .footer-col p, .footer-col a {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: #00a000;
+    }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      text-align: center;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="ASBCS Logo">
+    </div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" style="color:#00a000;">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you! Reach out anytime.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO -->
+  <section>
+    <h2>Our Offices</h2>
+    <div class="contact-info">
+      <div>
+        <h3>Manila Office</h3>
+        <p>Chateau Elysee Condominium, Better Living, Don Bosco, Parañaque City</p>
+        <p><strong>Email:</strong> asbcsmanila@gmail.com</p>
+        <p><strong>Phone:</strong> +(63) 905 339 9260 | +(63) 906 580 2878</p>
+      </div>
+      <div>
+        <h3>Provincial Office</h3>
+        <p>Toledo, Nabas, Aklan</p>
+        <p><strong>Email:</strong> asbcsmanila@gmail.com</p>
+        <p><strong>Phone:</strong> +(63) 905 339 9260</p>
+      </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+    <section>
+    <h2>Send Us a Message</h2>
+    <form action="https://formspree.io/f/xkgvdozv" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+    </section>
+
+  <!-- MAP -->
+  <section>
+    <h2>Find Us</h2>
+    <div class="map">
+      <!-- Embedded map based on your link -->
+      <iframe 
+        src="https://www.google.com/maps?q=Chateau+Elysee+Condominium,+Better+Living,+Don+Bosco,+Parañaque+City&output=embed" 
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>ASBCS</h3>
+        <p>Abergas Sajise Bookkeeping & Consultancy Services provides expert bookkeeping, tax compliance, and financial consultancy to help your business grow with confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p><strong>Manila Office:</strong><br> Chateau Elysee Condominium, Better Living, Don Bosco, Parañaque City</p>
+        <p><strong>Provincial Office:</strong><br> Toledo, Nabas, Aklan</p>
+        <p><strong>Email:</strong> <a href="mailto:asbcsmanila@gmail.com">asbcsmanila@gmail.com</a></p>
+        <p><strong>Phone:</strong> +(63) 905 339 9260 | +(63) 906 580 2878</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ASBCS - Abergas Sajise Bookkeeping & Consultancy Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger toggle menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

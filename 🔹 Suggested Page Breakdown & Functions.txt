@@ -1,0 +1,29 @@
+🔹 Suggested Page Breakdown & Functions
+index.html — Home
+    Hero banner (logo, tagline, CTA).
+    Brief intro (who ASBCS is).
+    Highlight of core services (with links to services.html).
+    Call-to-action: “Get a Free Consultation.”
+
+about.html — About Us
+    Company Snapshot.
+    Mission & Vision.
+    Governance & Personnel.
+    Competitive Strengths.
+
+services.html — Services
+    Core services grid/cards.
+    Each service with short details.
+    Link to service-specific pages (optional if you want deeper detail).
+
+contact.html — Contact Us
+    Office addresses (Manila & Provincial).
+    Email & phone numbers.
+    Contact form (Name, Email, Message).
+    Map (optional embed).
+
+faq.html — FAQ
+Common questions (pricing, process, turnaround, tax deadlines).
+
+
+
